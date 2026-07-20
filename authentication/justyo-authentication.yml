@@ -1,0 +1,29 @@
+generated: '2026-07-19'
+method: searched
+source: https://docs.justyo.co/ (docs.justyo.co, dev.justyo.co) + openapi/justyo-yo-openapi.yml
+docs: https://docs.justyo.co/docs/oauth
+summary:
+  types: [apiKey]
+  api_key_in: [query, form]
+  oauth2_flows: []
+  notes: >-
+    Primary auth is a static Yo API token (api_token) issued per registered API
+    username at the Yo Developer Hub (dev.justyo.co / dashboard.justyo.co). The token
+    is sent as the api_token form field on POST requests and as the api_token query
+    parameter on GET requests. Yo also documented an OAuth 2.0 page (docs.justyo.co/docs/oauth)
+    for delegated "send on behalf of a user" access, but the ReadMe hub recorded
+    oauth.enabled=false and the feature was beta; concrete authorize/token URLs are
+    not published, so no oauth2 scheme is asserted here to avoid fabrication.
+schemes:
+  - name: apiToken
+    type: apiKey
+    in: query
+    parameter: api_token
+    also_in: form
+    description: Yo API token issued per registered API username via the Yo Developer Hub.
+    sources: [openapi/justyo-yo-openapi.yml]
+oauth2_documented:
+  documented: true
+  status: beta-disabled
+  docs: https://docs.justyo.co/docs/oauth
+  note: OAuth 2.0 delegated access was documented but not enabled in the live hub.
