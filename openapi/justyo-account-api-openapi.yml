@@ -1,0 +1,56 @@
+openapi: 3.0.3
+info:
+  title: Yo Account API
+  version: '2.0'
+  description: The Yo API from justyo.co — "the world's simplest API." Yo lets a service push a single-tap "Yo" notification to its subscribers. A registered API username receives an API token; that token authorizes sending a Yo to a single subscriber (`/yo/`) or to every subscriber (`/yoall/`), optionally attaching a link, and reading the current subscriber count (`/subscribers_count/`). Authentication is an `api_token` obtained from the Yo Developer Hub. This specification is an API Evangelist capture of the publicly documented Yo API; the Yo service is now defunct (see lifecycle/).
+  contact:
+    name: Yo Developer Hub
+    url: https://docs.justyo.co/
+  x-apievangelist-generated: true
+  x-apievangelist-note: Captured from the public Yo documentation (docs.justyo.co, dev.justyo.co) and the first-party YoApp SDK sources (yo-php, YoPy). Not published by the provider as OpenAPI.
+servers:
+- url: https://api.justyo.co
+  description: Yo API production host (historically also served over http://)
+security:
+- apiToken: []
+tags:
+- name: Account
+  description: Read account/subscriber information.
+paths:
+  /subscribers_count/:
+    get:
+      operationId: getSubscribersCount
+      summary: Get subscriber count
+      description: Return the current number of subscribers for the API account.
+      tags:
+      - Account
+      parameters:
+      - name: api_token
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The API account's Yo API token.
+      responses:
+        '200':
+          description: Subscriber count.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriberCount'
+        '401':
+          description: Missing or invalid api_token.
+components:
+  schemas:
+    SubscriberCount:
+      type: object
+      properties:
+        result:
+          type: integer
+          description: The number of subscribers for the account.
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: query
+      name: api_token
+      description: Yo API token issued to a registered API username via the Yo Developer Hub. Passed as the `api_token` form field on POST requests and as the `api_token` query parameter on GET requests.

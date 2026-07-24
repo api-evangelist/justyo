@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Account Yo API
+  version: '2.0'
+  description: The Yo API from justyo.co — "the world's simplest API." Yo lets a service push a single-tap "Yo" notification to its subscribers. A registered API username receives an API token; that token authorizes sending a Yo to a single subscriber (`/yo/`) or to every subscriber (`/yoall/`), optionally attaching a link, and reading the current subscriber count (`/subscribers_count/`). Authentication is an `api_token` obtained from the Yo Developer Hub. This specification is an API Evangelist capture of the publicly documented Yo API; the Yo service is now defunct (see lifecycle/).
+  contact:
+    name: Yo Developer Hub
+    url: https://docs.justyo.co/
+  x-apievangelist-generated: true
+  x-apievangelist-note: Captured from the public Yo documentation (docs.justyo.co, dev.justyo.co) and the first-party YoApp SDK sources (yo-php, YoPy). Not published by the provider as OpenAPI.
+servers:
+- url: https://api.justyo.co
+  description: Yo API production host (historically also served over http://)
+security:
+- apiToken: []
+tags:
+- name: Yo
+  description: Send Yo notifications to subscribers.
+paths:
+  /yo/:
+    post:
+      operationId: sendYo
+      summary: Send a Yo to a specific subscriber
+      description: Send a single Yo notification to one subscribed username. Rate limited to one Yo per user per minute. An optional link is delivered with the Yo.
+      tags:
+      - Yo
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - api_token
+              - username
+              properties:
+                api_token:
+                  type: string
+                  description: The API account's Yo API token.
+                username:
+                  type: string
+                  description: The subscriber username to send the Yo to.
+                link:
+                  type: string
+                  format: uri
+                  description: Optional URL delivered with the Yo.
+      responses:
+        '200':
+          description: Yo accepted for delivery.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        '401':
+          description: Missing or invalid api_token.
+        '429':
+          description: Rate limit exceeded (one Yo per user per minute).
+  /yoall/:
+    post:
+      operationId: sendYoAll
+      summary: Send a Yo to all subscribers
+      description: Broadcast a single Yo notification to every subscriber of the API account. An optional link is delivered with the Yo.
+      tags:
+      - Yo
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - api_token
+              properties:
+                api_token:
+                  type: string
+                  description: The API account's Yo API token.
+                link:
+                  type: string
+                  format: uri
+                  description: Optional URL delivered with the Yo.
+      responses:
+        '200':
+          description: Broadcast accepted for delivery.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Result'
+        '401':
+          description: Missing or invalid api_token.
+components:
+  schemas:
+    Result:
+      type: object
+      properties:
+        result:
+          type: string
+          description: Delivery result indicator returned by the Yo API.
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      in: query
+      name: api_token
+      description: Yo API token issued to a registered API username via the Yo Developer Hub. Passed as the `api_token` form field on POST requests and as the `api_token` query parameter on GET requests.
