@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/justyo-yo-openapi.yml
+format: flat-json
+note: >-
+  The Yo API returns a simple flat JSON result envelope and does not use RFC 9457
+  application/problem+json. These entries are derived from the documented endpoint
+  behaviour and standard HTTP semantics.
+problems:
+  - status: 401
+    title: Missing or invalid api_token
+    remediation: Supply a valid api_token issued via the Yo Developer Hub.
+    source_operation: openapi/justyo-yo-openapi.yml#sendYo
+  - status: 429
+    title: Rate limit exceeded
+    remediation: Respect the one-Yo-per-user-per-minute limit before retrying.
+    source_operation: openapi/justyo-yo-openapi.yml#sendYo

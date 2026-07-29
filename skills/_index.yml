@@ -1,0 +1,7 @@
+generated: '2026-07-19'
+method: generated
+skills:
+  - file: justyo-send-yo.md
+    name: Send a Yo notification
+    api: openapi/justyo-yo-openapi.yml
+    operations: [sendYo, sendYoAll, getSubscribersCount]

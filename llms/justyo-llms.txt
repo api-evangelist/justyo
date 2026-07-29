@@ -1,0 +1,29 @@
+# Yo API (justyo.co)
+
+> Yo is "the world's simplest API" — a single-tap push notification service. A
+> registered API username receives an api_token that authorizes sending a Yo to one
+> subscriber or all subscribers, optionally with a link, plus reading the subscriber
+> count. The Yo service is now defunct; this profile is an API Evangelist historical capture.
+
+## APIs
+- [Yo API](https://docs.justyo.co/): Send Yo notifications to subscribers. Base URL https://api.justyo.co.
+
+## Specs
+- [OpenAPI](openapi/justyo-yo-openapi.yml): sendYo, sendYoAll, getSubscribersCount.
+
+## Operations
+- sendYo — POST /yo/ (api_token, username, link?) — Yo one subscriber.
+- sendYoAll — POST /yoall/ (api_token, link?) — Yo all subscribers.
+- getSubscribersCount — GET /subscribers_count/ (api_token) — subscriber count.
+
+## Auth
+- api_token issued via the Yo Developer Hub; form field on POST, query param on GET.
+
+## Docs
+- [Documentation](https://docs.justyo.co/)
+- [Developer Hub](http://dev.justyo.co/)
+- [GitHub org](https://github.com/YoApp)
+
+## SDKs
+- Python (YoPy), PHP (yo-php), Java (YoJava), Node (node-yo-api), Ruby (hey),
+  Scala (Scala-Yo), iOS/Objective-C (YO-iOS-SDK) — all under github.com/YoApp.

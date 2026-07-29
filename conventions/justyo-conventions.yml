@@ -1,0 +1,33 @@
+generated: '2026-07-19'
+method: searched
+source: https://medium.com/@YoAppStatus/yo-developers-api-e7f2f0ec5c3c + docs.justyo.co + openapi/justyo-yo-openapi.yml
+authentication:
+  style: api-token
+  parameter: api_token
+  transport: [form (POST), query (GET)]
+  docs: https://docs.justyo.co/
+idempotency:
+  supported: false
+  note: The Yo API documents no idempotency key or de-duplication contract.
+pagination:
+  supported: false
+  note: No list endpoints; only a scalar subscriber count. No pagination.
+rate_limiting:
+  documented: true
+  policy: One Yo per user per minute.
+  signaling: Not documented (no rate-limit response headers published).
+  source: https://medium.com/@YoAppStatus/yo-developers-api-e7f2f0ec5c3c
+  cross_ref: rate-limits/justyo-rate-limits.yml
+versioning:
+  scheme: hub-version
+  versions: ["1.0 (2014)", "2.0 (2015, current)"]
+  in_path: false
+  note: The Yo Developer Hub tracked doc versions 1.0 and 2.0; API paths are unversioned.
+request_content_type: application/x-www-form-urlencoded
+response_content_type: application/json
+error_envelope:
+  shape: '{ "result": <string|int|error> }'
+  note: Simple flat JSON result envelope; no RFC 9457 problem+json.
+  cross_ref: errors/justyo-problem-types.yml
+metadata: none
+request_tracing: none

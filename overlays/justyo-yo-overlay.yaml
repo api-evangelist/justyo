@@ -1,0 +1,14 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Yo API
+  version: 1.0.0
+extends: openapi/justyo-yo-openapi.yml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-status: defunct
+      x-apievangelist-source: docs.justyo.co + YoApp SDK sources
+  - target: $.tags
+    update:
+      - name: Notifications
+        description: Single-tap push notification delivery.

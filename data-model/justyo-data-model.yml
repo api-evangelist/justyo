@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/justyo-yo-openapi.yml
+entities:
+  - name: Account
+    description: A registered Yo API username holding an api_token.
+    identifiers: [username, api_token]
+  - name: Subscriber
+    description: A Yo user subscribed to an API account, addressable by username.
+    identifiers: [username]
+  - name: Yo
+    description: A single push notification, optionally carrying a link.
+    fields: [username, link]
+relationships:
+  - from: Account
+    to: Subscriber
+    kind: has_many
+    via: subscription
+  - from: Yo
+    to: Subscriber
+    kind: belongs_to
+    via: username

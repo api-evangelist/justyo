@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: searched
+source: https://medium.com/@YoAppStatus/yo-developers-api-e7f2f0ec5c3c
+rate_limits:
+  - scope: per-recipient
+    limit_count: 1
+    window: 60s
+    description: One Yo per user per minute.
+    applies_to: [sendYo]
+signaling:
+  headers: none
+  note: The Yo API does not document rate-limit response headers.

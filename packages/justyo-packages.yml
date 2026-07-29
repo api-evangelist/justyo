@@ -1,0 +1,47 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/YoApp (official Yo GitHub organization)
+note: >-
+  Yo published first-party client libraries across many languages under its official
+  GitHub organization (github.com/YoApp). These were distributed primarily via GitHub
+  rather than language package registries. official:true reflects first-party org
+  ownership.
+packages:
+  - language: python
+    registry: github
+    name: YoPy
+    url: https://github.com/YoApp/YoPy
+    install: pip install git+https://github.com/YoApp/YoPy.git
+    official: true
+  - language: php
+    registry: github
+    name: yo-php
+    url: https://github.com/YoApp/yo-php
+    install: composer require yoapp/yo-php
+    official: true
+  - language: java
+    registry: github
+    name: YoJava
+    url: https://github.com/YoApp/YoJava
+    official: true
+  - language: javascript
+    registry: github
+    name: node-yo-api
+    url: https://github.com/YoApp/node-yo-api
+    install: npm install node-yo-api
+    official: true
+  - language: ruby
+    registry: github
+    name: hey
+    url: https://github.com/YoApp/hey
+    official: true
+  - language: scala
+    registry: github
+    name: Scala-Yo
+    url: https://github.com/YoApp/Scala-Yo
+    official: true
+  - language: objective-c
+    registry: github
+    name: YO-iOS-SDK
+    url: https://github.com/YoApp/YO-iOS-SDK
+    official: true

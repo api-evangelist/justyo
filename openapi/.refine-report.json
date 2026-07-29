@@ -1,0 +1,16 @@
+{
+  "provider": "justyo",
+  "sources": [
+    "justyo-account-api-openapi.yml",
+    "justyo-yo-api-openapi.yml"
+  ],
+  "outputs": [
+    "justyo-account-api-openapi.yml",
+    "justyo-yo-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

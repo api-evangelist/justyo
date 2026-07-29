@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+host: https://justyo.co
+note: >-
+  The justyo.co host is suspended (apex redirects to a cPanel suspended page) and the
+  api./docs./dev. subdomains no longer resolve, so no /.well-known/ discovery documents
+  are served. Absence recorded as of the probe date.
+documents:
+  - path: /.well-known/security.txt
+    status: 0
+    note: host suspended / not reachable
+  - path: /.well-known/openid-configuration
+    status: 0
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+  - path: /.well-known/api-catalog
+    status: 0
+  - path: /.well-known/ai-plugin.json
+    status: 0

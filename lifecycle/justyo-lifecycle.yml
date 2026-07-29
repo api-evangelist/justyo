@@ -1,0 +1,22 @@
+generated: '2026-07-19'
+method: searched
+source: live probes (2026-07-19) + https://docs.justyo.co/
+status: defunct
+status_detail: >-
+  The Yo service is no longer operational. The justyo.co apex redirects to a cPanel
+  "suspended page" (https://justyo.co/cgi-sys/suspendedpage.cgi), the TLS certificate
+  on justyo.co has expired, and the api.justyo.co, docs.justyo.co, dev.justyo.co and
+  dashboard.justyo.co subdomains no longer resolve. The API is captured here for the
+  historical record.
+versioning:
+  scheme: hub-version
+  versions: ["1.0 (2014-09-29)", "2.0 (2015-07-29, last stable)"]
+  current: "2.0"
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No formal deprecation/sunset policy was published; the service was discontinued.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []
