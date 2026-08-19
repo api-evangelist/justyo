@@ -1,0 +1,493 @@
+{
+  "item": [
+    {
+      "id": "01309661-7a8f-45c0-a2f6-1d30d6403bef",
+      "name": "Yo",
+      "description": {
+        "content": "Send Yo notifications to subscribers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "feab97d2-4552-48b6-8b7e-d2bbbc8530e1",
+          "name": "Send a Yo to a specific subscriber",
+          "request": {
+            "name": "Send a Yo to a specific subscriber",
+            "description": {
+              "content": "Send a single Yo notification to one subscribed username. Rate limited to one Yo per user per minute. An optional link is delivered with the Yo.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "yo",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) The API account's Yo API token."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) The subscriber username to send the Yo to."
+                },
+                {
+                  "disabled": false,
+                  "key": "link",
+                  "value": "<uri>",
+                  "description": "Optional URL delivered with the Yo."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f1e74ece-e34d-4e39-9149-8aa839cd2e6c",
+              "name": "Yo accepted for delivery.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yo",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The API account's Yo API token.",
+                        "type": "text/plain"
+                      },
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The subscriber username to send the Yo to.",
+                        "type": "text/plain"
+                      },
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Optional URL delivered with the Yo.",
+                        "type": "text/plain"
+                      },
+                      "key": "link",
+                      "value": "<uri>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f44055f7-6c25-4581-ba93-ff4be3ccff63",
+              "name": "Missing or invalid api_token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yo",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The API account's Yo API token.",
+                        "type": "text/plain"
+                      },
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The subscriber username to send the Yo to.",
+                        "type": "text/plain"
+                      },
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Optional URL delivered with the Yo.",
+                        "type": "text/plain"
+                      },
+                      "key": "link",
+                      "value": "<uri>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "357283e2-2762-41f8-9809-2f261ecd87f4",
+              "name": "Rate limit exceeded (one Yo per user per minute).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yo",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The API account's Yo API token.",
+                        "type": "text/plain"
+                      },
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The subscriber username to send the Yo to.",
+                        "type": "text/plain"
+                      },
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Optional URL delivered with the Yo.",
+                        "type": "text/plain"
+                      },
+                      "key": "link",
+                      "value": "<uri>"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a44aeda7-881b-4d09-a310-c1dc0b0c8b49",
+          "name": "Send a Yo to all subscribers",
+          "request": {
+            "name": "Send a Yo to all subscribers",
+            "description": {
+              "content": "Broadcast a single Yo notification to every subscriber of the API account. An optional link is delivered with the Yo.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "yoall",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) The API account's Yo API token."
+                },
+                {
+                  "disabled": false,
+                  "key": "link",
+                  "value": "<uri>",
+                  "description": "Optional URL delivered with the Yo."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d0f4d1fb-e12e-4ec6-8a25-028bd2d404c0",
+              "name": "Broadcast accepted for delivery.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yoall",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The API account's Yo API token.",
+                        "type": "text/plain"
+                      },
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Optional URL delivered with the Yo.",
+                        "type": "text/plain"
+                      },
+                      "key": "link",
+                      "value": "<uri>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e79b547f-edc5-4c19-981d-26db3bd4a454",
+              "name": "Missing or invalid api_token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "yoall",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The API account's Yo API token.",
+                        "type": "text/plain"
+                      },
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Optional URL delivered with the Yo.",
+                        "type": "text/plain"
+                      },
+                      "key": "link",
+                      "value": "<uri>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.justyo.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "86d82697-3473-44cb-94fa-5d7a2928bd58",
+    "name": "Account Yo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Yo API from justyo.co — \"the world's simplest API.\" Yo lets a service push a single-tap \"Yo\" notification to its subscribers. A registered API username receives an API token; that token authorizes sending a Yo to a single subscriber (`/yo/`) or to every subscriber (`/yoall/`), optionally attaching a link, and reading the current subscriber count (`/subscribers_count/`). Authentication is an `api_token` obtained from the Yo Developer Hub. This specification is an API Evangelist capture of the publicly documented Yo API; the Yo service is now defunct (see lifecycle/).\n\nContact Support:\n Name: Yo Developer Hub",
+      "type": "text/plain"
+    }
+  }
+}

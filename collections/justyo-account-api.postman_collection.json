@@ -1,0 +1,176 @@
+{
+  "item": [
+    {
+      "id": "48496e40-e725-427b-9a6e-9ed077c03137",
+      "name": "Account",
+      "description": {
+        "content": "Read account/subscriber information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2a23c447-f933-44de-9829-4525ce3c3293",
+          "name": "Get subscriber count",
+          "request": {
+            "name": "Get subscriber count",
+            "description": {
+              "content": "Return the current number of subscribers for the API account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "subscribers_count",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) The API account's Yo API token."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7883090e-698c-4ed2-bf62-67907d5d0d72",
+              "name": "Subscriber count.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscribers_count",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": 7179\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3e9b552b-486f-4a87-bd59-619254719730",
+              "name": "Missing or invalid api_token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "subscribers_count",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.justyo.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3d793383-7fe7-4c98-81f8-19ec5649ee9b",
+    "name": "Yo Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Yo API from justyo.co — \"the world's simplest API.\" Yo lets a service push a single-tap \"Yo\" notification to its subscribers. A registered API username receives an API token; that token authorizes sending a Yo to a single subscriber (`/yo/`) or to every subscriber (`/yoall/`), optionally attaching a link, and reading the current subscriber count (`/subscribers_count/`). Authentication is an `api_token` obtained from the Yo Developer Hub. This specification is an API Evangelist capture of the publicly documented Yo API; the Yo service is now defunct (see lifecycle/).\n\nContact Support:\n Name: Yo Developer Hub",
+      "type": "text/plain"
+    }
+  }
+}

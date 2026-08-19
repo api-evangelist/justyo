@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Account Yo API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_token",
+      "value": "{{api_token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Yo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send a Yo to a specific subscriber",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.justyo.co/yo/",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "api_token",
+                  "value": ""
+                },
+                {
+                  "name": "username",
+                  "value": ""
+                },
+                {
+                  "name": "link",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Send a single Yo notification to one subscribed username. Rate limited to one Yo per user per minute. An optional link is delivered with the Yo."
+        },
+        {
+          "info": {
+            "name": "Send a Yo to all subscribers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.justyo.co/yoall/",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "api_token",
+                  "value": ""
+                },
+                {
+                  "name": "link",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Broadcast a single Yo notification to every subscriber of the API account. An optional link is delivered with the Yo."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

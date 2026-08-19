@@ -1,0 +1,45 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Yo Account API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_token",
+      "value": "{{api_token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get subscriber count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.justyo.co/subscribers_count/",
+            "params": [
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "The API account's Yo API token."
+              }
+            ]
+          },
+          "docs": "Return the current number of subscribers for the API account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

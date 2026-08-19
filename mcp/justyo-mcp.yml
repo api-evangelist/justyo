@@ -2,19 +2,24 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: openapi/justyo-yo-openapi.yml
-note: >-
-  No official Yo MCP server exists. This is a candidate tool list derived one-per-operation
-  from the documented Yo API for reference only; the Yo service is defunct.
+note: No official Yo MCP server exists. This is a candidate tool list derived one-per-operation from the
+  documented Yo API for reference only; the Yo service is defunct.
 server:
   name: justyo
   transport: stdio
 tools:
-  - name: send_yo
-    description: Send a Yo to a specific subscriber.
-    source_operation: openapi/justyo-yo-openapi.yml#sendYo
-  - name: send_yo_all
-    description: Broadcast a Yo to all subscribers.
-    source_operation: openapi/justyo-yo-openapi.yml#sendYoAll
-  - name: get_subscribers_count
-    description: Get the current subscriber count.
-    source_operation: openapi/justyo-yo-openapi.yml#getSubscribersCount
+- name: send_yo
+  description: Send a Yo to a specific subscriber.
+  source_operation: openapi/justyo-yo-openapi.yml#sendYo
+- name: send_yo_all
+  description: Broadcast a Yo to all subscribers.
+  source_operation: openapi/justyo-yo-openapi.yml#sendYoAll
+- name: get_subscribers_count
+  description: Get the current subscriber count.
+  source_operation: openapi/justyo-yo-openapi.yml#getSubscribersCount
+deployment:
+  mode: none
+  verified: derived
+  tools: 3
+  checked: '2026-08-12'
+  source: catalog MCP census
