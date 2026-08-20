@@ -36,6 +36,13 @@ modified: '2026-07-19'
 image: https://raw.githubusercontent.com/api-evangelist/justyo/refs/heads/main/openapi/justyo-yo-openapi.yml
 tags:
 - Company
+- Notification
+- Push Notifications
+- Messaging
+- Mobile
+- Developer Tools
+tags_raw:
+- Company
 - Notifications
 - Push Notifications
 - Messaging
