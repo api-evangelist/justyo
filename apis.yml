@@ -44,7 +44,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-09-15'
+modified: '2026-09-16'
 image: https://raw.githubusercontent.com/api-evangelist/justyo/refs/heads/main/openapi/justyo-yo-openapi.yml
 tags:
 - Company
@@ -53,6 +53,7 @@ tags:
 - Messaging
 - Mobile
 - Developer Tools
+- Defunct
 tags_raw:
 - Company
 - Notifications
@@ -61,6 +62,7 @@ tags_raw:
 - Mobile
 - Developer Tools
 - API
+- Defunct
 apis:
 - aid: justyo:justyo-account-api
   name: justyo Account API
