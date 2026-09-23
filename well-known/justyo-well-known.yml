@@ -1,11 +1,12 @@
 generated: '2026-07-19'
 method: searched
 host: https://justyo.co
-note: >-
-  The justyo.co host is suspended (apex redirects to a cPanel suspended page) and the
-  api./docs./dev. subdomains no longer resolve, so no /.well-known/ discovery documents
-  are served. Absence recorded as of the probe date.
-documents:
+note: The justyo.co host is suspended (apex redirects to a cPanel suspended page) and the api./docs./dev.
+  subdomains no longer resolve, so no /.well-known/ discovery documents are served. Absence recorded as
+  of the probe date.
+hosts:
+- host: https://justyo.co
+  documents:
   - path: /.well-known/security.txt
     status: 0
     note: host suspended / not reachable
@@ -17,3 +18,8 @@ documents:
     status: 0
   - path: /.well-known/ai-plugin.json
     status: 0
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.

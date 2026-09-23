@@ -1,8 +1,7 @@
 {
   "provider": "justyo",
   "sources": [
-    "justyo-account-api-openapi.yml",
-    "justyo-yo-api-openapi.yml"
+    "_original/justyo-yo-openapi.yml"
   ],
   "outputs": [
     "justyo-account-api-openapi.yml",
@@ -11,6 +10,13 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "justyo-yo-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "justyo-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "justyo-yo-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

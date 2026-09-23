@@ -1,8 +1,8 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Account Yo API
+  title: Yo API
   version: '2.0'
-  description: The Yo API from justyo.co — "the world's simplest API." Yo lets a service push a single-tap "Yo" notification to its subscribers. A registered API username receives an API token; that token authorizes sending a Yo to a single subscriber (`/yo/`) or to every subscriber (`/yoall/`), optionally attaching a link, and reading the current subscriber count (`/subscribers_count/`). Authentication is an `api_token` obtained from the Yo Developer Hub. This specification is an API Evangelist capture of the publicly documented Yo API; the Yo service is now defunct (see lifecycle/).
+  description: The Yo API from justyo.co — "the world's simplest API." Yo lets a service push a single-tap "Yo" notification to its subscribers.
   contact:
     name: Yo Developer Hub
     url: https://docs.justyo.co/
