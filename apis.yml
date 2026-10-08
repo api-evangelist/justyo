@@ -110,6 +110,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/justyo-rate-limits.yml
 - type: Overlay
   url: overlays/justyo-yo-overlay.yaml
 - type: Website
