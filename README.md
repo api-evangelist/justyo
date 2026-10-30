@@ -64,6 +64,78 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-justyo is a company surfaced as a portfolio company of slow-ventures and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-Backed by: slow-ventures — https://justyo.co
+Yo (justyo.co) was a single-tap notification app and "the world's simplest API." A service registered an API username, received an api_token, and could push a lightweight "Yo" notification to a single subscriber or broadcast to all subscribers, optionally attaching a link, plus read the subscriber count. The Yo API had effectively one job — fire a push — with an api_token for auth (an OAuth 2.0 page was documented but never enabled) and first-party client SDKs across Python, PHP, Java, Node, Ruby, Scala and iOS under the github.com/YoApp organization. The Yo service is now defunct: the justyo.co host is suspended and its api/docs/dev subdomains no longer resolve. This API Evangelist profile captures the historical Yo API surface for the record.
+
+**Areas:** Company · Notification · Push Notifications · Messaging · Mobile · Developer Tools · Defunct
+
+## justyo on APIs.io (historical record)
+
+Everything profiled for justyo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/justyo/](https://apis.io/providers/justyo/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [justyo Account API](https://apis.io/apis/justyo/justyo-account-api/) — Read account/subscriber information.
+- [justyo Yo API](https://apis.io/apis/justyo/justyo-yo-api/) — Send Yo notifications to subscribers.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [justyo](https://apis.io/servers/justyo/justyo/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Yo Account API](https://apis.io/collections/justyo/open-justyo-account-api/)
+- [Account Yo API](https://apis.io/collections/justyo/open-justyo-yo-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Justyo Yo Overlay](https://apis.io/overlays/justyo/justyo-yo-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Justyo Authentication](https://apis.io/security/justyo/justyo-authentication/)
+- [Justyo Domain Security](https://apis.io/security/justyo/justyo-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Justyo Rate Limits](https://apis.io/rate-limits/justyo/justyo-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://justyo.co)
+- [Documentation](https://docs.justyo.co/)
+- [Sign up](https://dashboard.justyo.co/)
+- [GitHub](https://github.com/YoApp)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for justyo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/justyo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
